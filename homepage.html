@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
+    <link rel="stylesheet" href="custom_style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+    <title>MeetUp</title>
+</head>
+<body>
+    <div id="welcome">
+    </div>
+    <button id="logout">Logout
+    </button>
+
+<section class="section">
+    <div class="container">
+        <div class="content has-text-centered">
+            <h1 class="title has-text-info is-family-secondary">MeetUp!</h1>
+            <h5 class="subtitle has-text-grey is-italic">Quickest Way to Connect with all Your Friends</h5>
+        </div>
+        <div class="tab has-text-centered" style = "display: inline-block; display : flex !important;
+        justify-content: center !important;">
+            <!-- tabs for recents, favorites, and friends-->
+            <button class="tablinks" onclick="openTab(event, 'Recents')">Recents</button>
+            <button class="tablinks" onclick="openTab(event, 'Favorites')">Favorites</button>
+            <button class="tablinks" onclick="openTab(event, 'Friends')">Friends</button>
+        </div>
+        <!-- Tab Contents-->
+        <div id="Recents" class="tabcontent">
+        
+          </div>
+          
+          <div id="Favorites" class="tabcontent">
+           
+          </div>
+          
+          <div id="Friends" class="tabcontent">
+            
+          </div>
+
+    </div>
+</section>
+
+<section class="section has-background-white" style = "padding: 5px; margin-bottom: 5px">
+    <div class="container" id='setup-meet'>
+        <div class="content">
+            <button class = "addfriend button is-dark" style = "margin-left: 250px; margin-top: 10px; height: 75px; display: flex-left; justify-content: space-between;">Add a Friend</button>
+            <button class = "addfav button is-dark" style = "margin-left: 200px; margin-top: 10px; height: 75px; display: flex-right; justify-content: space-between;">Add a Favorite</button>
+            <br>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title">Create a MeetUp!</h1>
+                    <h5 class="subtitle has-text-grey">please enter some information below</h5>
+                    <label class = "subtitle has-text-info has-text-centered">What's your address?</label> 
+                    <br>
+                    <input id = "search1" style = "display: inline-block;" class = "city1 has-text-centered" type = "text" placeholder = "Type here...">
+                    <br>
+                    <label class = "subtitle has-text-info has-text-centered">Where's your friend's address?</label>
+                    <br>
+                    <input id = "search2" style = "display: inline-block;" class = "city2 has-text-centered" type = "text" placeholder = "Type here...">
+                    <br>
+                    <br>
+                </div>
+                <div class="column">
+                    <h1 class="title">Make it Perfect</h1>
+                    <h5 class="subtitle has-text-grey">Select some of your preferences for this MeetUp</h5>
+                    <label class = "subtitle has-text-info has-text-centered">Select type of Meeting Place:</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="meetingplace" value="Restaurant">  Restaurant
+                    </label>
+                    <label>
+                        <input type="radio" name="meetingplace" value="Mall">  Mall/Shopping Center
+                    </label>
+                    <label>
+                        <input type="radio" name="meetingplace" value="Retail">  Retail Shop
+                    </label>
+                    <label>
+                        <input type="radio" name="meetingplace" value="Recreation">  Recreation
+                    </label>
+                    <label>
+                        <input type="radio" name="meetingplace" value="Movie">  Movie Theatre
+                    </label>
+                    <br>
+                    <br>
+                    <label class = "subtitle has-text-info has-text-centered">Select Number of Stars:</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="stars" value="1"/>  1
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="2"/>  2
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="3"/>  3
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="4"/>  4
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="5"/>  5
+                    </label>
+                    <br>
+                    <br>
+                    <label class = "subtitle has-text-info has-text-centered">Select Price Point:</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="price" value="$"/>  $
+                    </label>
+                    <label>
+                        <input type="radio" name="price" value="$$"/>  $$
+                    </label>
+                    <label>
+                        <input type="radio" name="price" value="$$$"/>  $$$
+                    </label>
+                    <br>
+                    <br>
+                    <a class="button is-dark" id="meetup">Let's Meet!</a>
+                    <a class="button is-dark" href="map_result_display.html">test</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+ function openTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src='homepage.js'></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<!--3rd Part API links and ref-->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBonJqDqpoZ4ISXRDSfqChh_1a9T0902Gg&libraries=places&v=weekly"
+  defer
+></script>
+
+<link rel="stylesheet" type="text/css" href="./APIstyle.css" />
+</body>
+</html>
+
