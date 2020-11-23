@@ -25,7 +25,7 @@ const handleSubmit = function(event){
 
 
 
-  //window.location.href = "homepage.html";
+  window.location.href = "index.html";
 
     
 }
@@ -35,5 +35,5 @@ const handleSubmit = function(event){
 
 
 $(function() {
-    $(`button.button.is-dark.submit`).on("click", handleSubmit)
+    $(`.signup-button`).on("click", handleSubmit)
 });

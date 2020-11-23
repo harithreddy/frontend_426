@@ -3,70 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bulma.css" />
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
     <link rel="stylesheet" href="custom_style.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
-    <title>Login Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Bangers&display=swap' rel="stylesheet">
+    <title>Sign-up Page</title>
 </head>
 <body>
+    <section class="section">
+        <div class="content">
+            <h1 class = "logo">MeetUp</h1><br>
+            <h1 id="title" class="title">Create your account and MeetUp Today!</h1>
+        
+            <form id="signup-form">
+                <div id = "labels">
+                    <label id ="email">EMAIL:</label><br><br>
+                    <label id="password">PASSWORD:</label><br><br>
+                </div>
+                <div id = "inputs">
+                    <input class="email-input" type = "text" placeholder = "bob@gmail.com"><br>
+                    <input type = "password" id = "pwd" name = "pwd"><br>
+                </div>
+            </form>
+            <br>
+            <br>
+             
+   
+<!---
 <section class="section">
     <div class="content">
-        <h1 class="title">Signup</h1>
+        <h1 class="title">Create your account and MeetUp Today!</h1>
         <form>
             <div class="field">
-                <label class="label">Email</label>
+                <label class="label">Please enter your e-mail:</label>
                 <div class="control">
                     <input class="email-input" type="text" placeholder="johndoe1@gmail.com" name="username">
                 </div>
             </div>
 
             <div class="field">
-                <label class="label" for="pwd">Password</label>
+                <label class="label" for="pwd">Create a Password:</label>
                 <div class="control">
                     <input type="password" id="pwd" name="pwd">
                 </div>
             </div>
-
-            <div id="div_checkboxes">
-            <label class = "label">Enter Your Food Preferences Below: </label>
-            <div  style = "display: inline-block; padding: 10px;" class="rows">
+-->
+            <div id="div_checkboxes" style = "text-align: center;">
+            <label id = "pref" class = "label">Enter Your Food Preferences Below: </label>
+            <div  style = "display: inline-block; padding: 10px; font-size: 18px;" class="rows">
                 <div class="checkbox">
-                        <input class = "pref" type="checkbox" name = "food" value = "Pizza"> Pizza</option>
+                        <input class = "pref" type="checkbox" name = "food" value = "Restaurant"> Restaurant</option>
                 </div>
             </div>
-            <div style = "display: inline-block; padding: 10px;" class="rows">
+            <div style = "display: inline-block; padding: 10px; font-size: 18px;" class="rows">
                 <div class="checkbox">
-                        <input class = "pref" type="checkbox" name = "food" value = "FastFood"> Fast Food</option>
+                        <input class = "pref" type="checkbox" name = "food" value = "Mall"> Mall/Shopping Center</option>
                 </div>
             </div>
-            <div style = "display: inline-block; padding: 10px;" class="rows">
+            <div style = "display: inline-block; padding: 10px; font-size: 18px;" class="rows">
                 <div class="checkbox">
-                        <input class = "pref" type="checkbox" name = "food" value = "Steak" > Steak</option>
+                        <input class = "pref" type="checkbox" name = "food" value = "Retail" > Retail Shop</option>
                 </div>
             </div>
-            <div style = "display: inline-block; padding: 10px;" class="rows">
+            <div style = "display: inline-block; padding: 10px; font-size: 18px;" class="rows">
                 <div class="checkbox">
-                        <input class = "pref" type="checkbox" name = "food" value = "Healthy"> Healthy</option>
+                        <input class = "pref" type="checkbox" name = "food" value = "Recreation"> Recreation</option>
                 </div>
             </div>
-            <div style = "display: inline-block; padding: 10px;" class="rows">
+            <div style = "display: inline-block; padding: 10px; font-size: 18px;" class="rows">
                 <div class="checkbox">
-                        <input class = "pref" type="checkbox" name = "food" value = "Veggies"> Veggies/Salads</option>
-                </div>
-            </div>
-            <div style = "display: inline-block; padding: 10px;" class="rows">
-                <div class="checkbox">
-                        <input class = "pref" type="checkbox" name = "food" value = "Mexican"> Mexican</option>
-                </div>
-            </div>
-            <div style = "display: inline-block; padding: 10px;" class="rows">
-                <div class="checkbox">
-                        <input class = "pref" type="checkbox" name = "food" value = "Indian"> Indian</option>
-                </div>
-            </div>
-            <div style = "display: inline-block; padding: 10px;" class="rows">
-                <div class="checkbox">
-                        <input class = "pref" type="checkbox" name = "food" value = "Buffet"> Buffet</option>
+                        <input class = "pref" type="checkbox" name = "food" value = "Movie"> Movie Theatre</option>
                 </div>
             </div>
 
@@ -112,18 +117,10 @@
             </div>
             -->
 
-            <div class="field">
+            <div class="field" style = "text-align: center;">
                 <div class="control">
-                    <a class="button is-dark" href="index.html">Back</a>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="control">
-                    <button class = "button is-dark submit" type="submit">Submit</button>
-                    <!--
-                    <a class="button is-dark" href="favfoodssignup.html">Next</a>
-                    -->
+                    <a class="back-button" href="index.html">Back</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a class = "signup-button" type="submit">Sign Up</a>
                 </div>
             </div>
         </form>

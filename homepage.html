@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bulma.css" />
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
     <link rel="stylesheet" href="custom_style.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./APIstyle.css" />
+
+    <link href='https://fonts.googleapis.com/css?family=Bangers&display=swap' rel="stylesheet">
     <title>MeetUp</title>
 </head>
 <body>
     <div id="welcome">
     </div>
-    <button id="logout">Logout
+    <button class = "button is-dark"id="logout">Logout
     </button>
 
 <section class="section">
     <div class="container">
-        <div class="content has-text-centered">
-            <h1 class="title has-text-info is-family-secondary">MeetUp!</h1>
-            <h5 class="subtitle has-text-grey is-italic">Quickest Way to Connect with all Your Friends</h5>
-        </div>
-        <div class="tab has-text-centered" style = "display: inline-block; display : flex !important;
-        justify-content: center !important;">
+            <h1 class = "homepage-logo">MeetUp</h1><br>
+    </div>
+    <br>
+
+        <div class="tab">
             <!-- tabs for recents, favorites, and friends-->
-            <button class="tablinks" onclick="openTab(event, 'Recents')">Recents</button>
+            <button class="tablinks" onclick="openTab(event, 'Recents')">Recents</button> &nbsp&nbsp&nbsp&nbsp
             <button class="tablinks" onclick="openTab(event, 'Favorites')">Favorites</button>
             <button class="tablinks" onclick="openTab(event, 'Friends')">Friends</button>
         </div>
@@ -43,32 +44,34 @@
     </div>
 </section>
 
-<section class="section has-background-white" style = "padding: 5px; margin-bottom: 5px">
-    <div class="container" id='setup-meet'>
+
+    <div class="container" id="setup-meet">
         <div class="content">
-            <button class = "addfriend button is-dark" style = "margin-left: 250px; margin-top: 10px; height: 75px; display: flex-left; justify-content: space-between;">Add a Friend</button>
-            <button class = "addfav button is-dark" style = "margin-left: 200px; margin-top: 10px; height: 75px; display: flex-right; justify-content: space-between;">Add a Favorite</button>
             <br>
             <br>
             <div class="columns">
-                <div class="column">
+                <div class="column-hi">
                     <h1 class="title">Create a MeetUp!</h1>
-                    <h5 class="subtitle has-text-grey">please enter some information below</h5>
-                    <label class = "subtitle has-text-info has-text-centered">What's your address?</label> 
+                    <h5 class="plsenter">please enter some information below</h5><br>
+                    <label class = "your-address">Your address:</label> 
                     <br>
-                    <input id = "search1" style = "display: inline-block;" class = "city1 has-text-centered" type = "text" placeholder = "Type here...">
+                    <input id = "search1" class = "city1 your-address-box" type = "text" placeholder = "Enter address here...">
+                    <br><br>
+                    <label class = "friend-address">Your friend's address:</label>
                     <br>
-                    <label class = "subtitle has-text-info has-text-centered">Where's your friend's address?</label>
-                    <br>
-                    <input id = "search2" style = "display: inline-block;" class = "city2 has-text-centered" type = "text" placeholder = "Type here...">
+                    <input id = "search2" class = "city2 friend-address-box" type = "text" placeholder = "Enter address here...">
                     <br>
                     <br>
+                    <br>
+                    <p class="other-options">Other options</p>
+                    <button class = "addfriend">Add a Friend</button>
+                    <button class = "addfav">Add a Favorite</button>
                 </div>
                 <div class="column">
                     <h1 class="title">Make it Perfect</h1>
-                    <h5 class="subtitle has-text-grey">Select some of your preferences for this MeetUp</h5>
-                    <label class = "subtitle has-text-info has-text-centered">Select type of Meeting Place:</label>
-                    <br>
+                    <h5 class="submake-text">Select some of your preferences for this MeetUp:</h5><br>
+                    <label class = "pref-meet-place">Preferred Meeting Place:</label>
+                    <br><br>
                     <label>
                         <input type="radio" name="meetingplace" value="Restaurant">  Restaurant
                     </label>
@@ -82,12 +85,12 @@
                         <input type="radio" name="meetingplace" value="Recreation">  Recreation
                     </label>
                     <label>
-                        <input type="radio" name="meetingplace" value="Movie">  Movie Theatre
+                        <input type="radio" name="meetingplace" value="Movie">Theatre
                     </label>
                     <br>
                     <br>
-                    <label class = "subtitle has-text-info has-text-centered">Select Number of Stars:</label>
-                    <br>
+                    <label class = "rating">Select Number of Stars:</label>
+                    <br><br>
                     <label>
                         <input type="radio" name="stars" value="1"/>  1
                     </label>
@@ -105,8 +108,8 @@
                     </label>
                     <br>
                     <br>
-                    <label class = "subtitle has-text-info has-text-centered">Select Price Point:</label>
-                    <br>
+                    <label class = "price-point">Select Price Point:</label>
+                    <br><br>
                     <label>
                         <input type="radio" name="price" value="$"/>  $
                     </label>
@@ -118,12 +121,10 @@
                     </label>
                     <br>
                     <br>
-                    <a class="button is-dark" id="meetup">Let's Meet!</a>
-                    <a class="button is-dark" href="map_result_display.html">test</a>
+                    <br>
+                    <button class="meet-button" id="meetup">Let's Meet!</button>
+        
                 </div>
-            </div>
-        </div>
-    </div>
 </section>
 <script>
  function openTab(evt, cityName) {
@@ -149,8 +150,6 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBonJqDqpoZ4ISXRDSfqChh_1a9T0902Gg&libraries=places&v=weekly"
   defer
 ></script>
-
-<link rel="stylesheet" type="text/css" href="./APIstyle.css" />
 </body>
 </html>
 
