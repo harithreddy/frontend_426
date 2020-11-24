@@ -29,7 +29,7 @@ const handleSubmit =  function(event){
 const checkCredentials = async function(email, password) {
     const result = await axios({
         method: 'post',
-        url: 'https://secret-brook-97060.herokuapp.com/',
+        url: 'https://secret-brook-97060.herokuapp.com/login',
         data:{
             "email":email,
             "password": password,
