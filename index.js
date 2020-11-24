@@ -16,7 +16,7 @@ const handleSubmit =  function(event){
             window.location='/homepage.html'
         }, 3000);
     }).catch(() => {
-        $message.replaceWith('<h5 style="font-size: large; color:red; text-align:center;" id="message">Something went wrong and you were not logged in. Check your email and password and your internet connection.</h5>');
+        $message.replaceWith('<h5 style="font-size: large; color:red; text-align:center;" id="message">Something went wrong and you were not logged in. Check your email and password again.</h5>');
     })
 
     
